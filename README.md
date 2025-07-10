@@ -28,18 +28,3 @@ The original `SmartHomeManager` class was:
 |  Replaced conditionals inside `SendAlert` with polymorphism | To reduce clutter and support future alert types |
 |  Used constructor injection for all services | To allow for mocking and easier testing |
 |  Created real and mock implementations for each service | To support both real usage and test scenarios |
-
----
-
-##  After Refactoring – New Architecture
-
-SmartHomeManager
-├── IDatabase
-│   └── SqlDatabase
-├── IAlertService
-│   └── AlertService
-│       ├── EmailSender
-│       └── SmsSender
-└── IExternalNotifier
-    └── GoogleNotifier
-        └── GoogleHomeApi

@@ -1,11 +1,6 @@
-# 🧠 Beginner SOLID Test – Smart Home Refactoring
+#  Beginner SOLID Test – Smart Home Refactoring
 
-Welcome to this practical refactoring project focused on applying clean coding principles to a **Smart Home Management System**.  
-The goal is to take a tightly coupled, hard-to-test class and transform it into a clean, modular, and extensible system — while preserving its external behavior.
-
----
-
-## 🏗️ Original Problem
+##  Original Problem
 
 The original `SmartHomeManager` class was:
 
@@ -16,7 +11,7 @@ The original `SmartHomeManager` class was:
 
 ---
 
-## ✅ Refactoring Goals
+##  Refactoring Goals
 
 - Improve **modularity**, **flexibility**, and **testability**
 - Keep the **external behavior unchanged**
@@ -24,22 +19,27 @@ The original `SmartHomeManager` class was:
 
 ---
 
-## 🛠️ What Was Changed (with Reasoning)
+##  What Was Changed (with Reasoning)
 
 | Change | Why |
 |-------|-----|
-| 🔹 Extracted interfaces (`IDatabase`, `IAlertService`, `IExternalNotifier`) | To allow flexible and swappable components |
-| 🔹 Moved logic out of `SmartHomeManager` | To keep each class focused on a single task |
-| 🔹 Replaced conditionals inside `SendAlert` with polymorphism | To reduce clutter and support future alert types |
-| 🔹 Used constructor injection for all services | To allow for mocking and easier testing |
-| 🔹 Created real and mock implementations for each service | To support both real usage and test scenarios |
+|  Extracted interfaces (`IDatabase`, `IAlertService`, `IExternalNotifier`) | To allow flexible and swappable components |
+|  Moved logic out of `SmartHomeManager` | To keep each class focused on a single task |
+|  Replaced conditionals inside `SendAlert` with polymorphism | To reduce clutter and support future alert types |
+|  Used constructor injection for all services | To allow for mocking and easier testing |
+|  Created real and mock implementations for each service | To support both real usage and test scenarios |
 
 ---
 
-## 🔁 After Refactoring – New Architecture
+##  After Refactoring – New Architecture
 
 SmartHomeManager
-├── IDatabase → SqlDatabase
-├── IAlertService → AlertService (uses EmailSender / SmsSender)
-└── IExternalNotifier → GoogleNotifier (uses GoogleHomeApi)
-
+├── IDatabase
+│   └── SqlDatabase
+├── IAlertService
+│   └── AlertService
+│       ├── EmailSender
+│       └── SmsSender
+└── IExternalNotifier
+    └── GoogleNotifier
+        └── GoogleHomeApi

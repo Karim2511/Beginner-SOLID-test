@@ -1,19 +1,45 @@
-# Beginner-SOLID-test
-🛠️ Explanation of Changes
-In the original code, the SmartHomeManager class was responsible for multiple unrelated tasks — such as controlling devices, sending alerts, logging to the database, and interacting with external systems. This made the class hard to maintain, test, and extend.
+# 🧠 Beginner SOLID Test – Smart Home Refactoring
 
-To improve this:
+Welcome to this practical refactoring project focused on applying clean coding principles to a **Smart Home Management System**.  
+The goal is to take a tightly coupled, hard-to-test class and transform it into a clean, modular, and extensible system — while preserving its external behavior.
 
-I separated out responsibilities into individual components like IAlertService, IDatabase, and IExternalNotifier.
+---
 
-These components are now injected into SmartHomeManager, making the class focused only on managing smart devices.
+## 🏗️ Original Problem
 
-I replaced direct instantiations (new EmailSender(), new SqlDatabase()) with abstractions, which makes it easier to swap implementations or mock them in tests.
+The original `SmartHomeManager` class was:
 
-The alert logic (choosing between SMS and Email) is now encapsulated in a single service, reducing the decision-making from the core logic.
+- Responsible for **too many things** (device control, alerts, DB saving, external API calls)
+- Contained **hardcoded dependencies** like `new SqlDatabase()` and `new EmailSender()`
+- Difficult to **extend** (e.g., adding a new alert type or external service)
+- Not suitable for **unit testing** due to lack of dependency injection
 
-These changes keep the external behavior exactly the same but make the code much easier to work with and evolve.
+---
 
-📌 Summary
-This refactoring makes the system easier to change and test by organizing the code around clear responsibilities and reducing unnecessary dependencies between components.
-It also improves flexibility — new behavior can now be added without modifying the core logic. The code is cleaner, more focused, and better prepared for future growth.
+## ✅ Refactoring Goals
+
+- Improve **modularity**, **flexibility**, and **testability**
+- Keep the **external behavior unchanged**
+- Make the system **easier to extend and maintain**
+
+---
+
+## 🛠️ What Was Changed (with Reasoning)
+
+| Change | Why |
+|-------|-----|
+| 🔹 Extracted interfaces (`IDatabase`, `IAlertService`, `IExternalNotifier`) | To allow flexible and swappable components |
+| 🔹 Moved logic out of `SmartHomeManager` | To keep each class focused on a single task |
+| 🔹 Replaced conditionals inside `SendAlert` with polymorphism | To reduce clutter and support future alert types |
+| 🔹 Used constructor injection for all services | To allow for mocking and easier testing |
+| 🔹 Created real and mock implementations for each service | To support both real usage and test scenarios |
+
+---
+
+## 🔁 After Refactoring – New Architecture
+
+SmartHomeManager
+├── IDatabase → SqlDatabase
+├── IAlertService → AlertService (uses EmailSender / SmsSender)
+└── IExternalNotifier → GoogleNotifier (uses GoogleHomeApi)
+

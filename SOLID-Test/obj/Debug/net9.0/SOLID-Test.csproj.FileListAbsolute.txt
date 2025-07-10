@@ -1,0 +1,15 @@
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\bin\Debug\net9.0\SOLID-Test.exe
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\bin\Debug\net9.0\SOLID-Test.deps.json
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\bin\Debug\net9.0\SOLID-Test.runtimeconfig.json
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\bin\Debug\net9.0\SOLID-Test.dll
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\bin\Debug\net9.0\SOLID-Test.pdb
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\SOLID-Test.GeneratedMSBuildEditorConfig.editorconfig
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\SOLID-Test.AssemblyInfoInputs.cache
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\SOLID-Test.AssemblyInfo.cs
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\SOLID-Test.csproj.CoreCompileInputs.cache
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\SOLID-Test.sourcelink.json
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\SOLID-Test.dll
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\refint\SOLID-Test.dll
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\SOLID-Test.pdb
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\SOLID-Test.genruntimeconfig.cache
+D:\.Net\CAT\Tasks\Beginner-SOLID-test\SOLID-Test\obj\Debug\net9.0\ref\SOLID-Test.dll
